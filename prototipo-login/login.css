@@ -4,6 +4,7 @@
     box-sizing: border-box;
     transition: all 0.3s;
     font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
 }
 
 body, html {
@@ -15,6 +16,10 @@ main#inicio {
     background-color: #f1f3f9;
     height: 100vh;
     width: 100vw;
+    position: absolute;
+    display: grid;
+    place-items: center;
+ 
 }
 
 img {
@@ -22,10 +27,12 @@ img {
 }
 
 .contenedor {
-    height: 100vh;
-    width: 100%;
-    display: grid;
-    place-items: center;
+    background-color: #1f2232;
+    position: relative;
+    padding: 24px;
+    left: 0;
+    
+
 }
 
 .titulo-login {
@@ -91,10 +98,12 @@ input {
 .logo-gym {
     position: absolute;
     top: -100px;
-    right: 55px;
+    left: 50%;
     background-color: #ffc857;
     border-radius: 50%; 
     padding: 20px;
+    transform: translateX(-50%);
+    margin: 0;
 }
 
 .boton {
@@ -113,3 +122,74 @@ input {
     font-weight: 500;
     color: #473819;
 }
+
+
+
+.btssesion{
+    background-color: #ffc857;
+    border: none;
+    border-radius: 0px 0px 5px 5px;
+    padding: 5px;
+    width: 80px;
+    cursor: pointer;
+    color: #473819;
+    
+    
+}
+.tipo{
+    
+    bottom: -30px;
+    position: absolute;
+    width: 100%;
+    justify-content: space-around;
+    gap: 50px;
+    display: flex;
+    justify-content: flex-end;
+    right: 0;
+    padding: 0 17px;
+    z-index: 3;
+}
+.corporativo:hover::before{
+    background-position: 100%;
+}
+.corporativo{
+    border: 3px solid #ffc857 ;
+    overflow: hidden;
+}
+.corporativo::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgb(247, 202, 79);
+    z-index: -2;
+}
+.corporativo::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 250px;
+    left: 0;
+    bottom: -150px;
+    border-radius: 30%;
+    background-color: white;
+    z-index: -1;
+}
+.corporativo:hover::before{
+    animation: corporativo 2s linear both;
+}
+@keyframes corporativo {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        bottom: 100px;
+        transform: rotate(100deg);
+    }
+}
+
+
+
+
